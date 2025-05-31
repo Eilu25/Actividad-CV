@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mi página con Bootstrap</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+  <style>
+    #libros .card-img-top {
+      max-height: 250px;
+      object-fit: cover;
+    }
+    section {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">MiSitio</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="#inicio">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#sobreMi">Sobre mí</a></li>
+          <li class="nav-item"><a class="nav-link" href="#libros">Libros</a></li>
+          <li class="nav-item"><a class="nav-link" href="#testimonios">Testimonios</a></li>
+          <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container my-5">
+
+    <!-- Encabezado -->
+    <section id="inicio">
+      <h1 class="mb-4 text-center">Ejercicio Bootstrap - Unidad 2</h1>
+      <p class="lead text-center">Soy Eileen, y esta es mi primera página Bootstrap.</p>
+    </section>
+
+    <!-- Imagen -->
+    <div class="text-center mb-5">
+      <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=800&q=60"
+           class="img-fluid rounded shadow"
+           alt="Vista de ciudad">
+    </div>
+
+    <!-- Sobre mí -->
+    <section id="sobreMi">
+      <h4 class="mb-4">Sobre mí</h4>
+      <div class="card mx-auto mb-5" style="max-width: 22rem;">
+        <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=800&q=60"
+             class="card-img-top"
+             alt="Libros y café">
+        <div class="card-body">
+          <h5 class="card-title">Café + libros</h5>
+          <p class="card-text">Me encanta crear espacios lindos para disfrutar los pequeños momentos. Este rincón lo armé en casa para relajarme y leer tranquila.</p>
+          <a href="#" class="btn btn-outline-primary">Ver más</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Libros -->
+    <section id="libros">
+      <h4 class="mb-4">Libros destacados</h4>
+      <p>Estos son algunos de mis libros favoritos que recomiendo para leer con una taza de café.</p>
+      <div class="row row-cols-1 row-cols-md-2 g-4">
+
+        <div class="col">
+          <div class="card h-100 shadow">
+            <img src="https://planetadelibrosar0.cdnstatics.com/usuaris/libros/fotos/202/original/portada_la-chica-del-tren_paula-hawkins_201505291617.jpg" class="card-img-top" alt="La chica del tren" />
+            <div class="card-body">
+              <h5 class="card-title">La chica del tren</h5>
+              <p class="card-text">Un thriller psicológico que sigue la vida de Rachel y un misterio que cambia su mundo.</p>
+              <a href="https://es.wikipedia.org/wiki/La_chica_del_tren" target="_blank" class="btn btn-primary">Más info</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card h-100 shadow">
+            <img src="https://tse4.mm.bing.net/th?id=OIP.rGgMc3BRscfQw3PmvkVWkgHaLQ&pid=Api&P=0&h=180" class="card-img-top" alt="El psicoanalista" />
+            <div class="card-body">
+              <h5 class="card-title">El psicoanalista</h5>
+              <p class="card-text">Un relato de suspenso y venganza en el que un psicoanalista debe enfrentarse a un enemigo invisible.</p>
+              <a href="https://es.wikipedia.org/wiki/El_psicoanalista" target="_blank" class="btn btn-primary">Más info</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Testimonios -->
+    <section id="testimonios">
+      <h4 class="mb-4">Testimonios</h4>
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+          <div class="card h-100 shadow">
+            <div class="card-body">
+              <p class="card-text">"Este sitio me ayudó a encontrar justo lo que necesitaba para mejorar mi lectura diaria."</p>
+              <h6 class="card-subtitle text-muted">— Juan Pérez</h6>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 shadow">
+            <div class="card-body">
+              <p class="card-text">"Muy buena organización y diseño, hace que la experiencia sea muy agradable."</p>
+              <h6 class="card-subtitle text-muted">— María López</h6>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 shadow">
+            <div class="card-body">
+              <p class="card-text">"Me encantó el enfoque en libros y café, ¡muy acogedor y lindo el sitio!"</p>
+              <h6 class="card-subtitle text-muted">— Carlos García</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Servicios -->
+    <section id="servicios">
+      <h4 class="mb-4">Servicios</h4>
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+          <div class="card h-100 shadow text-center p-3">
+            <i class="bi bi-book" style="font-size: 2rem;"></i>
+            <h5 class="mt-3">Consultoría literaria</h5>
+            <p>Asesoría personalizada para encontrar los mejores libros según tus intereses.</p>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 shadow text-center p-3">
+            <i class="bi bi-cup-straw" style="font-size: 2rem;"></i>
+            <h5 class="mt-3">Eventos con café</h5>
+            <p>Organización de encuentros para amantes del café y la lectura.</p>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 shadow text-center p-3">
+            <i class="bi bi-journal-text" style="font-size: 2rem;"></i>
+            <h5 class="mt-3">Blog literario</h5>
+            <p>Artículos y reseñas sobre libros, autores y tendencias literarias.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto">
+      <h4 class="mb-3">Formulario de contacto</h4>
+      <p>Si te interesa lo que hago o tenés alguna pregunta, ¡escribime!</p>
+      <form>
+        <div class="mb-3">
+          <label for="emailInput" class="form-label">Correo electrónico</label>
+          <input type="email" class="form-control" id="emailInput" placeholder="nombre@ejemplo.com" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+      </form>
+
+      <div class="alert alert-warning mt-4" role="alert" style="display:none;" id="alertaEmail">
+        Este mensaje aparecería si se intenta mandar el formulario sin completar el mail.
+      </div>
+    </section>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const form = document.querySelector('form');
+    const emailInput = document.getElementById('emailInput');
+    const alerta = document.getElementById('alertaEmail');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+      if (!emailInput.value) {
+        alerta.style.display = 'block';
+      } else {
+        alerta.style.display = 'none';
+        alert('Formulario enviado!');
+        form.reset();
+      }
+    });
+  </script>
+
+</body>
+</html>
