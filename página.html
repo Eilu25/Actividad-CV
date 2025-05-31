@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mi página con Bootstrap</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    /* Limitar altura y mantener proporción en imágenes de portada de libros */
+    #libros .card-img-top {
+      max-height: 250px;
+      object-fit: cover; /* recorta la imagen si es necesario para mantener proporción */
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">MiSitio</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="#inicio">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#sobreMi">Sobre mí</a></li>
+          <li class="nav-item"><a class="nav-link" href="#libros">Libros</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container my-5">
+
+    <!-- Encabezado -->
+    <section id="inicio">
+      <h1 class="mb-4 text-center">Ejercicio Bootstrap - Unidad 2</h1>
+      <p class="lead text-center">Soy Eileen, y esta es mi primera página Bootstrap.</p>
+    </section>
+
+    <!-- Imagen -->
+    <div class="text-center mb-5">
+      <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=800&q=60"
+           class="img-fluid rounded shadow"
+           alt="Vista de ciudad">
+    </div>
+
+    <!-- Card personalizada -->
+    <section id="sobreMi">
+      <h4 class="mb-4">Sobre mí</h4>
+      <div class="card mx-auto mb-5" style="max-width: 22rem;">
+        <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=800&q=60"
+             class="card-img-top"
+             alt="Libros y café">
+        <div class="card-body">
+          <h5 class="card-title">Café + libros</h5>
+          <p class="card-text">Me encanta crear espacios lindos para disfrutar los pequeños momentos. Este rincón lo armé en casa para relajarme y leer tranquila.</p>
+          <a href="#" class="btn btn-outline-primary">Ver más</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Nueva sección Libros -->
+    <section id="libros" class="mb-5">
+      <h4 class="mb-4">Libros destacados</h4>
+      <p>Estos son algunos de mis libros favoritos que recomiendo para leer con una taza de café.</p>
+      <div class="row row-cols-1 row-cols-md-2 g-4">
+
+        <div class="col">
+          <div class="card h-100 shadow">
+            <img src="https://planetadelibrosar0.cdnstatics.com/usuaris/libros/fotos/202/original/portada_la-chica-del-tren_paula-hawkins_201505291617.jpg" class="card-img-top" alt="La chica del tren" />
+            <div class="card-body">
+              <h5 class="card-title">La chica del tren</h5>
+              <p class="card-text">Un thriller psicológico que sigue la vida de Rachel y un misterio que cambia su mundo.</p>
+              <a href="https://es.wikipedia.org/wiki/La_chica_del_tren" target="_blank" class="btn btn-primary">Más info</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card h-100 shadow">
+            <img src="https://tse4.mm.bing.net/th?id=OIP.rGgMc3BRscfQw3PmvkVWkgHaLQ&pid=Api&P=0&h=180" class="card-img-top" alt="El psicoanalista" />
+            <div class="card-body">
+              <h5 class="card-title">El psicoanalista</h5>
+              <p class="card-text">Un relato de suspenso y venganza en el que un psicoanalista debe enfrentarse a un enemigo invisible.</p>
+              <a href="https://es.wikipedia.org/wiki/El_psicoanalista" target="_blank" class="btn btn-primary">Más info</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Formulario de contacto -->
+    <section id="contacto">
+      <h4 class="mb-3">Formulario de contacto</h4>
+      <p>Si te interesa lo que hago o tenés alguna pregunta, ¡escribime!</p>
+      <form>
+        <div class="mb-3">
+          <label for="emailInput" class="form-label">Correo electrónico</label>
+          <input type="email" class="form-control" id="emailInput" placeholder="nombre@ejemplo.com" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+      </form>
+
+      <!-- Alerta -->
+      <div class="alert alert-warning mt-4" role="alert" style="display:none;" id="alertaEmail">
+        Este mensaje aparecería si se intenta mandar el formulario sin completar el mail.
+      </div>
+    </section>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Validar formulario para mostrar alerta si no se completa email
+    const form = document.querySelector('form');
+    const emailInput = document.getElementById('emailInput');
+    const alerta = document.getElementById('alertaEmail');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+      if (!emailInput.value) {
+        alerta.style.display = 'block';
+      } else {
+        alerta.style.display = 'none';
+        alert('Formulario enviado!'); // Aquí podrías poner acción real de envío
+        form.reset();
+      }
+    });
+  </script>
+
+</body>
+</html>
